@@ -107,7 +107,9 @@ export const UsersTable = ({ users }: UsersTableProps) => {
         <button
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className="bg-purple-600 text-white p-2 rounded-md cursor-pointer"
+          className={`${
+            !table.getCanPreviousPage() ? "bg-slate-400" : "bg-purple-600"
+          } text-white p-2 rounded-md cursor-pointer`}
         >
           <ArrowLeftIcon />
         </button>
@@ -121,7 +123,9 @@ export const UsersTable = ({ users }: UsersTableProps) => {
         <button
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          className="bg-purple-600 text-white p-2 rounded-md cursor-pointer"
+          className={`${
+            !table.getCanNextPage() ? "bg-slate-400" : "bg-purple-600"
+          } text-white p-2 rounded-md cursor-pointer`}
         >
           <ArrowRightIcon />
         </button>
